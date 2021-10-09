@@ -1,0 +1,18 @@
+.paginations {
+    list-style-type: none;
+}
+.pagination-item {
+    background-color: #ddd;
+    padding: .4rem;
+    border-radius: 50%;
+    font-size: .6rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+.pagination-item:not(:last-child){
+    margin-right: .5rem;
+}
+.pagination-item-active {
+    background-color: red;
+    color: #fff;
+}
