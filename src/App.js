@@ -9,22 +9,24 @@ function App() {
   const [ meta, setMeta] = useState(null);
   const [currPage, setCurrentPage] = useState(1);
 
+
   useEffect( () => {
+
     setIsLoading(true);
     fetch(`https://zlzew.mocklab.io/pagination?page=${currPage}`)
-    .then(res => {
-        return res.json()
-    })
-    .then(res => {
-        const { data, meta } = res;
-        setIsLoading(false);
-        setData(data)
-        setMeta(meta)
-    })
-    .catch(err => {
-        setIsLoading(false);
-        console.log(err)
-    })
+      .then(res => {
+          return res.json()
+      })
+      .then(res => {
+          const { data, meta } = res;
+          setIsLoading(false);
+          setData(data)
+          setMeta(meta)
+      })
+      .catch(err => {
+          setIsLoading(false);
+          console.log(err)
+      })
 
 
 

@@ -37,7 +37,7 @@ export default function Paginations({
                             {item}
                         </li>
                     )
-                }else if(item === 'right'){
+                }else if(item === NAV_RIGHT){
                     return <li key={i} className={'pagination-item'} onClick={() => onPageChange(currentPage + 1)}>&#8594;</li>
                 }
                 
