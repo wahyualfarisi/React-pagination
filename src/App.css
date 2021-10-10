@@ -1,5 +1,4 @@
 .App {
-
     width: 60%;
     margin: auto;
 }
@@ -17,6 +16,9 @@
 }
 .collection-item > img {
     width: 100%;
+}
+.collection-item > img.blur {
+    filter: blur(3rem);
 }
 
 
