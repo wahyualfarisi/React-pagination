@@ -16,7 +16,7 @@ function App() {
   const [currPage, setCurrentPage] = useState( page ? +page : 1 );
 
   useEffect( () => {
-    
+  
     setIsLoading(true);
     fetch(`https://zlzew.mocklab.io/pagination?page=${currPage}`)
       .then(res => {
@@ -29,10 +29,20 @@ function App() {
           setMeta(meta)
       })
       .catch(err => {
+          
           setIsLoading(false);
       })
       
   }, [currPage] )
+
+  useEffect( () => {
+
+    window.onpopstate = () => {
+      let page = new URLSearchParams(history.location.search).get('page');
+      setCurrentPage(page ? +page : 1)
+    }
+
+  }, [history])
 
   const onChangePageHandler = ( num ) => {
     setCurrentPage(num)
